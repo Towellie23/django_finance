@@ -26,8 +26,7 @@ class UserBudget(models.Model):
     end_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.budget} by {self.user.username} at {self.date}'
-
+        return f'{self.budget} by {self.user.username} at {self.start_at}'
 
 class Report(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Мои финансы</h1>
+<a href="{% url 'finance_app:add_user_income' %}">Добавить доходы</a>
+<ul>
+    {% for user_income in user_incomes %}
+    <li>
+        {{ user_income.income }} {{ user_income.description }} {{ user_income.date }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

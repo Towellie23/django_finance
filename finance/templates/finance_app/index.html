@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Добро пожаловать в приложение мониторинга финансов!</h1>
+{% if user.is_authenticated %}
+<p>💡 Привет, {{ user.username }}! Перейдите в <a href="{% url 'finance_app:dashboard' %}">Мои финансы</a>.</p>
+{% else %}
+<p>Пожалуйста, <a href="{% url 'login' %}">войдите</a> или <a href="{% url 'finance_app:signup' %}">зарегистрируйтесь</a>.</p>
+{% endif %}
+
+{% endblock %}
